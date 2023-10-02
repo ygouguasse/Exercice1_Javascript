@@ -12,10 +12,24 @@ AjouterLivre("Le Guépard", "Giuseppe Tomasi di Lampedusa", 1958);
 AjouterLivre("Le Parfum", "Patrick Süskind", 1985);
 AjouterLivre("Le Nom de la Rose", "Umberto Eco", 1980);
 
+function AjouterLivre(titre, auteur, annee) {
+    const livre = {
+        "titre": titre,
+        "auteur": auteur,
+        "annee": annee,
+    };
+
+    tousLesLivres.push(livre);
+}
+
 export function RechercherLivresParAuteur(auteur) {
     // À faire
+    // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+    return tousLesLivres.filter((livre) => livre["auteur"] === auteur);
 }
 
 export function RechercherLivresPubliesApres(annee) {
     // À faire
+    // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+    return tousLesLivres.filter((livre) => livre["annee"] > annee);
 }

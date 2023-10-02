@@ -12,3 +12,8 @@ const livresApres1990 = RechercherLivresPubliesApres(1990);
 console.log("Livres publiés après 1990 :", livresApres1990);
 
 // Votre code
+function AfficherLivres(livres) {
+    livres.forEach(livre => {
+        console.log(`${livre["titre"]} par ${livre["auteur"]}, en ${livre["annee"]}`);
+    });
+}
