@@ -8,8 +8,8 @@ function Initialiser() {
     AjouterAuteursDesLivresDansDatalist();
     AjouterAnneesDesLivresDansMenuDeroulant();
 
-	document.getElementById("auteur").addEventListener("blur", GererBlurDeInputAuteur);
-    document.getElementById("annees").addEventListener("change", GererChangeDeSelectAnnee);
+	document.getElementById("auteur").addEventListener("blur", GererBlurDeInputAuteur);    //bulur : qu'on quitte
+    document.getElementById("annees").addEventListener("change", GererChangeDeSelectAnnee); 
 }
 
 function AfficherLivres(livres) {
@@ -29,7 +29,7 @@ function AfficherLivres(livres) {
     });
 }
 
-function GererBlurDeInputAuteur(event) {
+function GererBlurDeInputAuteur(event) {     // Event prend  evenement blur
     const auteur = event.currentTarget.value;
 
     if (auteur === "") {
@@ -81,13 +81,12 @@ function AjouterAnneesDesLivresDansMenuDeroulant() {
     tousLesLivres.forEach(livre => {
         if (!annees.includes(livre["annee"])) {
             annees.push(livre["annee"]);
-        }
+        }                                                    
     });
 
     annees.forEach(annee => {
         menu.innerHTML += `
-            <option value="${annee}">
-                ${annee}
+            <option value=" ${annee}" > ${annee}           
             </option>
         `;
     });
